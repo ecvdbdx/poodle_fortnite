@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import NewsItem from './NewsItem'
 
 class News extends Component {
   constructor(props) {
@@ -27,9 +28,7 @@ class News extends Component {
       <div>
         <ul>
           { this.state.articleData.map((article, index) => (
-            <li key={index}>
-              <p>{article.title}</p>
-            </li>
+            <NewsItem key={index} article={article} />
           ))}
         </ul>
       </div>
