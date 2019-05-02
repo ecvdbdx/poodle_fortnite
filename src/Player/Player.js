@@ -6,8 +6,13 @@ class Player extends Component {
 
     this.state = { 
       playerId: '',
-      playerData: 0 
+      playerData: 0,
+      playerName: '',
     };
+  }
+
+  handleChange = (event) => {
+    this.setState({playerName: event.target.value});
   }
 
   async componentDidMount() {
@@ -25,9 +30,7 @@ class Player extends Component {
 
     fetch(`https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=${playerId}`, {
       method: 'GET'
-    }).then((response) => {
-      return response.json()
-    })
+    }).then((response) => response.json())
     .then((response) => {
       this.setState({
         playerData: {...response}
@@ -37,11 +40,15 @@ class Player extends Component {
   }
 
   render() {
+    const { playerData, playerId, playerName } = this.state
+
     return (
       <div>
+        <input type='text' value={playerName} onChange={this.handleChange} />
+        <button>Search</button>
         <h1>player</h1>
-        <p>{this.state.playerId}</p>
-
+        <p>{playerId}</p>
+        <p>{playerData.epicName}</p>
       </div>
     )
   }
