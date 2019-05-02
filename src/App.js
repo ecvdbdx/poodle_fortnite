@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import Player from './Player/Player'
 import News from './News/News'
+import './assets/style/style.css'
 
 class App extends Component {
   render() {

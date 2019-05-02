@@ -23,7 +23,7 @@ class Player extends Component {
       return response.uid
     })
 
-    await fetch(`https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=${playerId}`, {
+    fetch(`https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=${playerId}`, {
       method: 'GET'
     }).then((response) => {
       return response.json()

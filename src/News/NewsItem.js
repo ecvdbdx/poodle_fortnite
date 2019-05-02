@@ -6,7 +6,7 @@ class NewsItem extends Component {
     const { article } = this.props
     return (
       <li>
-        <header style={styles.heading}>
+        <header className='news__title'>
           <h2>{article.title}</h2>
         </header>
         <div>
@@ -17,12 +17,6 @@ class NewsItem extends Component {
         </div>
       </li>
     )
-  }
-}
-
-const styles = {
-  heading: {
-    color: 'blue'
   }
 }
 
