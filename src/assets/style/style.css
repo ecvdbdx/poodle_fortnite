@@ -1,3 +1,7 @@
 .news__title {
   color: blue;
 }
+
+.player__error {
+  color: red
+}
