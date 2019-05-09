@@ -49,16 +49,7 @@ class Player extends Component {
         {loading && <Loader /> }
         {!loading && (
           <div>
-<<<<<<< HEAD
             <h1 className="player__name">{playerData.epicName}</h1>
-=======
-            <input type='text' value={playerName} onChange={this.handleChange} />
-            {error && <p className='player__error'>{error}</p>}
-            <button onClick={() => this.getPlayerData()}>Search</button>
-            <h1>player</h1>
-            <p>{playerId}</p>
-            <p>{playerData.epicName}</p>
->>>>>>> 31c604142bc59b188c4050dc117fa9e94632342c
             {playerData.overallData ? (
               <div>
                 <p>Kills : {playerData.overallData.defaultModes.kills}</p>
