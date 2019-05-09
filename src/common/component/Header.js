@@ -44,6 +44,7 @@ class Header extends Component {
         <h1>FORTNITE</h1>
         <Link to="/player/">Player</Link>
         <Link to="/news/">News</Link>
+        <Link to="/weapons/">Weapons</Link>
         <input type='text' value={playerName} onChange={this.handleChange} />
         {error && <p className='player__error'>{error}</p>}
         <button onClick={this.getPlayerId}>Search</button>
