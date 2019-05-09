@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import Loader from '../Loader/Loader'
 import WeaponsItem from "../Weapons/WeaponsItem";
 
 class Weapons extends Component {
@@ -13,8 +12,8 @@ class Weapons extends Component {
         };
     }
 
-    getWeapons = async () => {
-        const weapons = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get', {
+    getWeapons = () => {
+        fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get', {
             method: 'GET'
         })
             .then((response) => {
@@ -30,7 +29,6 @@ class Weapons extends Component {
                 this.setState({
                     data: {...response}
                 });
-                console.log(response);
                 return response;
             })
             .catch(() => {
@@ -49,11 +47,7 @@ class Weapons extends Component {
                 {error};
                 <ul className="grid listingWeapons" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitRows" }'>
                     {data.weapons && (
-                        data.weapons.map((item, index) => {
-                            return (
-                                <WeaponsItem key={index} weapon={item}/>
-                            )
-                        })
+                        data.weapons.map((item, index) => <WeaponsItem key={index} weapon={item}/>)
                     )}
                 </ul>
             </div>
