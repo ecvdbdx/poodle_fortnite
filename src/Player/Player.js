@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Loader from '../Loader/Loader'
 import './player.css'
+import api from '../api/Api'
 
 class Player extends Component {
   constructor(props) {
@@ -20,26 +21,11 @@ class Player extends Component {
 
   getPlayerData = async (playerId) => {
     this.setState({error: ''})
-    fetch(`https://fortnite-public-api.theapinetwork.com/prod09/users/public/br_stats_v2?user_id=${playerId}`, {
-      method: 'GET'
-    })
-    .then((response) => {
-      if (response.status !== 200) {
-        this.setState({
-          loading: false
-        })
-        throw response
-      }
-      return response.json()
-    })
-    .then((response) => {
-      this.setState({
-        playerData: {...response},
-        loading: false
-      })
-      return response
-    })
-    
+    const playerData = await api.fetchPlayerData(playerId)
+    this.setState({
+      playerData: {...playerData},
+      loading: false
+    })    
   }
 
   render() {
