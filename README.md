@@ -1,3 +1,6 @@
+# A lire 
+Les push sur ce projet sont effectués seulement par le compte GitHub de Gaëtan, car Thomas (moi-même) n'arrive pas à faire fonctionner le projet sur mon ordinateur ~~de merde~~. Je ne push pas, mais nous travaillons bel et bien à deux.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
