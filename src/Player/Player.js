@@ -82,6 +82,13 @@ class Player extends Component {
             <h1>player</h1>
             <p>{playerId}</p>
             <p>{playerData.epicName}</p>
+            {playerData.overallData ? (
+              <div>
+                <p>Kills : {playerData.overallData.defaultModes.kills}</p>
+                <p>Matches Played : {playerData.overallData.defaultModes.matchesplayed}</p>
+                <p>Top 1 : {playerData.overallData.defaultModes.placetop1}</p>
+              </div>
+            ) : ''}
           </div>
         )}
       </div>
