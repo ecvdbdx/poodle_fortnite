@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class ItemsItem extends Component {
+class Item extends Component {
     render() {
         const { item } = this.props;
         return(
@@ -11,4 +11,4 @@ class ItemsItem extends Component {
     }
 }
 
-export default ItemsItem;
+export default Item;
