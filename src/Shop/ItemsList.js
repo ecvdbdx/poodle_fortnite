@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import api from '../api/Api'
 import Item from './Item'
+import './shop.css'
 
 class ItemsList extends Component {
   constructor(props) {
@@ -30,9 +31,11 @@ class ItemsList extends Component {
     const { data } = this.state
     return (
     	<div>
-        {data.length && data.map((item, index) => {
-          return <Item key={index} item={item} />
-        })}
+        <ul className="list">
+          {data.length && data.map((item, index) => {
+            return <Item key={index} item={item} />
+          })}
+        </ul>
       </div>	
     )
   } 

@@ -4,7 +4,7 @@ class Item extends Component {
     render() {
         const { item } = this.props;
         return(
-            <li>
+            <li className="item">
                 <p>{item.identifier}</p>
             </li>
         );
