@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import WeaponsItem from "../Weapons/WeaponsItem";
+import api from '../api/Api'
 
 class Weapons extends Component {
     constructor(props) {
@@ -7,33 +8,17 @@ class Weapons extends Component {
 
         this.state = {
             error: '',
-            loading: false,
+            loading: true,
             data: []
         };
     }
 
-    getWeapons = () => {
-        fetch('https://fortnite-public-api.theapinetwork.com/prod09/weapons/get', {
-            method: 'GET'
+    getWeapons = async () => {
+        const data = await api.fetchWeapons()
+        this.setState({
+            data: {...data},
+            loading: false
         })
-            .then((response) => {
-                if (response.status !== 200) {
-                    this.setState({
-                        loading: false
-                    });
-                    throw response
-                }
-                return response.json()
-            })
-            .then((response) => {
-                this.setState({
-                    data: {...response}
-                });
-                return response;
-            })
-            .catch(() => {
-                this.setState({error: 'Error during rendering.'});
-            })
     };
 
     componentDidMount() {
