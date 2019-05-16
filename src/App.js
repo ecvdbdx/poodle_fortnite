@@ -4,7 +4,7 @@ import './App.css';
 import Player from './Player/Player'
 import Weapons from './Weapons/Weapons'
 import News from './News/News'
-import Items from './Items/Items'
+import Items from './Shop/ItemsList'
 import Header from './common/component/Header'
 
 class App extends Component {
