@@ -45,6 +45,7 @@ class Header extends Component {
         <Link to="/player/">Player</Link>
         <Link to="/news/">News</Link>
         <Link to="/weapons/">Weapons</Link>
+        <Link to="/items/">Items</Link>
         <input type='text' value={playerName} onChange={this.handleChange} />
         {error && <p className='player__error'>{error}</p>}
         <button onClick={this.getPlayerId}>Search</button>
