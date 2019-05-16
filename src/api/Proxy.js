@@ -23,4 +23,16 @@ export default class Proxy {
     }
     return {}
   }
+
+  async fetchPlayerItems() {
+    const response = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/items/list', {
+      method: 'GET'
+    })
+    if (response.status === 200) {
+      const responseJson = response.json()
+
+      return responseJson
+    }
+    return {}
+  }
 }

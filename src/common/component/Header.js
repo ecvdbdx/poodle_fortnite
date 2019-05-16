@@ -56,6 +56,7 @@ class Header extends Component {
           <ul>
             <li><Link to="/news/">News</Link></li>
             <li><Link to="/weapons/">Weapons</Link></li>
+            <li><Link to="/items/">Items</Link></li>
           </ul>
 
           <div className="search">
