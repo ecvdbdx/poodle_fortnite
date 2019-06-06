@@ -1,0 +1,25 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.item {
+  width: 200px;
+  height:200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.item__img-info {
+  width: 150px;
+  height: 150px;
+}
+/* .weaponsItem img {
+  height: 50%;
+} */

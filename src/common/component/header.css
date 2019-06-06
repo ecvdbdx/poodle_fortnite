@@ -1,0 +1,27 @@
+.header {
+}
+
+.header__title {
+  text-align: center;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 40px;
+}
+
+.search {
+  display: flex;
+  align-items: center
+}
+
+.search__loader {
+  position: relative;
+}
+
+.search__error {
+  font-size: 12px;
+  color: red;
+}
