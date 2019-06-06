@@ -5,7 +5,8 @@ class Item extends Component {
         const { item } = this.props;
         return(
             <li className="item">
-                <p>{item.identifier}</p>
+                <img className="item__img-info" src={item.item.images.information} alt={item.item.name} />
+                <p>{item.item.name}</p>
             </li>
         );
     }

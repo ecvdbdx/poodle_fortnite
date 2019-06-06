@@ -31,8 +31,10 @@ class Header extends Component {
     if (playerName.match(this.matchPseudo)) {
       this.setState({loading: true})
       const playerData = await api.fetchPlayerId(playerName)
-
-      this.props.history.push(`/player/${playerData.uid}`)
+      
+      if (playerData.data) {
+        this.props.history.push(`/player/${playerData.data.uid}`)
+      }
     } else {
       this.setState({ error: 'Votre pseudo doit contenir entre 3 et 16 caractères. Il peut comprendre des caractères alphanumériques ainsi que des tirets, des points et des espaces non consécutifs.'})
     }
@@ -54,6 +56,7 @@ class Header extends Component {
         
         <nav className="header__nav">
           <ul>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/news/">News</Link></li>
             <li><Link to="/weapons/">Weapons</Link></li>
             <li><Link to="/items/">Items</Link></li>

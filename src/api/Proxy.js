@@ -1,5 +1,12 @@
 export default class Proxy {
 
+  static getCommonHeaders() {
+    return {
+      'content-type': 'application/json',
+      'Authorization': '8a1c5781147ca1218ffc653f4a3bae03' 
+    }
+  }
+
   async fetchPlayerId(name) {
     const response = await fetch(`https://fortnite-public-api.theapinetwork.com/prod09/users/id?username=${name}`, {
       method: 'GET'
@@ -25,8 +32,9 @@ export default class Proxy {
   }
 
   async fetchPlayerItems() {
-    const response = await fetch('https://fortnite-public-api.theapinetwork.com/prod09/items/list', {
-      method: 'GET'
+    const response = await fetch('https://fortnite-api.theapinetwork.com/store/get', {
+      method: 'GET',
+      headers: Proxy.getCommonHeaders()
     })
     if (response.status === 200) {
       const responseJson = response.json()

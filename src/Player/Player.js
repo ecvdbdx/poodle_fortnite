@@ -28,6 +28,7 @@ class Player extends Component {
   getPlayerData = async (playerId) => {
     this.setState({error: ''})
     const playerData = await api.fetchPlayerData(playerId)
+    console.log(playerData)
     this.setState({
       playerData: {...playerData},
       loading: false

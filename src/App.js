@@ -6,6 +6,7 @@ import Weapons from './Weapons/Weapons'
 import News from './News/News'
 import Items from './Shop/ItemsList'
 import Header from './common/component/Header'
+import Home from './Home/Home'
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
       <Router>
         <Header />
 
+        <Route path="/" exact component={Home} />
         <Route path="/news" component={News} />
         <Route
           path="/player/:id" 

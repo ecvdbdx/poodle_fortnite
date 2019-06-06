@@ -16,6 +16,10 @@
   flex-direction: column;
   justify-content: center;
 }
+.item__img-info {
+  width: 150px;
+  height: 150px;
+}
 /* .weaponsItem img {
   height: 50%;
 } */

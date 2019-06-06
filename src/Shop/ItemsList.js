@@ -21,8 +21,9 @@ class ItemsList extends Component {
   getData = async () => {
     this.setState({error: ''})
     const data = await api.fetchPlayerItems()
+    console.log(data.data)
 	  this.setState({
-      data: data,
+      data: data.data,
       loading: false
     });
   }
