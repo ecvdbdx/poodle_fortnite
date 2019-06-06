@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import News from '../News/News'
-import Items from '../Shop/ItemsList'
+import Items from '../Shop/StoreItems'
 
 class Home extends Component {
 

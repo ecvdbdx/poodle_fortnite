@@ -31,8 +31,21 @@ export default class Proxy {
     return {}
   }
 
-  async fetchPlayerItems() {
+  async fetchStoreItems() {
     const response = await fetch('https://fortnite-api.theapinetwork.com/store/get', {
+      method: 'GET',
+      headers: Proxy.getCommonHeaders()
+    })
+    if (response.status === 200) {
+      const responseJson = response.json()
+
+      return responseJson
+    }
+    return {}
+  }
+
+  async fetchAllItems() {
+    const response = await fetch('https://fortnite-api.theapinetwork.com/items/list', {
       method: 'GET',
       headers: Proxy.getCommonHeaders()
     })

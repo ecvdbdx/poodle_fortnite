@@ -3,7 +3,7 @@ import api from '../api/Api'
 import Item from './Item'
 import './shop.css'
 
-class ItemsList extends Component {
+class StoreItems extends Component {
   constructor(props) {
     super(props);
 
@@ -20,7 +20,7 @@ class ItemsList extends Component {
 
   getData = async () => {
     this.setState({error: ''})
-    const data = await api.fetchPlayerItems()
+    const data = await api.fetchStoreItems()
     console.log(data.data)
 	  this.setState({
       data: data.data,
@@ -42,4 +42,4 @@ class ItemsList extends Component {
   } 
 }
 
-export default ItemsList;
+export default StoreItems;

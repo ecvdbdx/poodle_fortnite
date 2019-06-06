@@ -4,7 +4,7 @@ import './App.css';
 import Player from './Player/Player'
 import Weapons from './Weapons/Weapons'
 import News from './News/News'
-import Items from './Shop/ItemsList'
+import AllItems from './Shop/AllItems'
 import Header from './common/component/Header'
 import Home from './Home/Home'
 
@@ -22,7 +22,7 @@ class App extends Component {
           component={Player}
         />
         <Route path="/weapons/" component={Weapons} />
-        <Route path="/items/" component={Items} />
+        <Route path="/items/" component={AllItems} />
       </Router>
     );
   }
