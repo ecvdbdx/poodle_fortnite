@@ -11,7 +11,8 @@ class AllItems extends Component {
       error: '',
       loading: false,
       data: [],
-      rarity: []
+      rarity: [],
+      allRarity: []
     };
   }
 
@@ -26,11 +27,13 @@ class AllItems extends Component {
 
   getData = async () => {
     this.setState({error: ''})
-    const data = await api.fetchAllItems()
+    const { data } = await api.fetchAllItems()
+    const allRarity = [...data.reduce((acc, item) => acc.add(item.item.rarity), new Set())]
 	  this.setState({
-      data: data.data,
+      data: data,
       loading: false,
       page: 1,
+      allRarity: [...allRarity]
     });
   }
 
@@ -49,8 +52,12 @@ class AllItems extends Component {
     this.setState((prevState) => ({rarity: [...prevState.rarity, type]}))
   }
 
+  clearRarity = () => {
+    this.setState({rarity: []})
+  }
+
   render() {
-    const { data, page, rarity } = this.state
+    const { data, page, rarity, allRarity } = this.state
     const itemsFiltered = () => {
       if (rarity.length > 0) {
         return data.filter((item) => rarity.includes(item.item.rarity) )
@@ -60,7 +67,18 @@ class AllItems extends Component {
     const itemsLazy = itemsFiltered().filter((item, index) => index < 50 * page )
     return (
     	<div>
-        <button onClick={() => this.filterRarity('legendary')}>Legendary</button>
+        <div>
+          {allRarity.map((rarityType) => {
+            return (
+              <button key={rarityType} onClick={() => this.filterRarity(rarityType)}>
+                {rarityType}
+              </button>
+            )
+          })}
+          <button onClick={() => this.clearRarity()}>
+            Clear Rarity
+          </button>
+        </div>
         <ul className="list">
           {data.length && itemsLazy.map((item, index) => {
             return <Item key={index} item={item} />
